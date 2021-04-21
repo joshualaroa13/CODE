@@ -2,22 +2,27 @@
     <div class="howto">
         <img src="../assets/texts/How.png">
         <p>Instructions:
-                <br>
+                <br><br>
             - Go to SHOP section to browse all the products available at our online shop
-<br>
+<br><br>
             - ADD TO CART the product/s that you wish to buy
-<br>
-            - If you are satisfied with your order/s and wish to check out, just click the shopping bag icon and proceed to CHECKOUT
-<br>
-            - Input your email address, then choose your preferred DELIVERY METHOD
-<br>
-            - For the DELIVERY METHOD, you may choose between SHIP or CASH ON PICK-UP (COP) / STORE PICK UP
+<br><br>
+            - If you are satisfied with your order/s and wish to check out, just click the cart icon at the top right corner and proceed to CHECKOUT
+<br><br>
+            - Input your email address, phone number and location for the delivery
+<br><br>
+            - Click CONFIRM if you are done filling up the required fields 
+<br><br>
+            - You will receive a text message that confirms your order
 
-            SHIP
-<br>
-            - If you choose SHIP, fill out the necessary information needed on the SHIPPING ADDRESS section
-<br>
-            - Proceed to CONTINUE TO SHIPPING
+<br><br><br><br>
+            PAYMENT DETAILS
+            <br><br>
+            - BPI
+<br><br>
+             ACCOUNT NAME: JOSHUA L. LAROA
+            <br>
+             ACCOUNT NUMBER: 9799267613
         </p>
     </div>
 </template>
@@ -31,11 +36,26 @@ export default {
 </script>
 
 <style scoped>
-    img{
-        margin-top: 15px;
-        padding: 5px;
-        width: 100%;
-        max-width: 300px;
-        margin-left: 300px;
+
+    .howto{
+        padding-bottom: -50px;
     }
+    img{
+        padding-bottom: 25px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 20%;
+    }
+
+    p{
+         padding-bottom: 25px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 65%;
+    }
+
+    
+
 </style>

@@ -5,6 +5,7 @@
         </div>
         <div class="row">
             <div class="column">
+                
                 <img src="../assets/products/featured.png">
                 <img class="column-hover" src="../assets/products/featured1-1.png">
              </div>

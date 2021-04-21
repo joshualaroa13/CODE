@@ -4,9 +4,17 @@ import Home from '../App.vue'
 import Shop from '../views/Shop.vue'
 import Start from '../views/StartPage.vue'
 import How from '../views/HowToOrder.vue'
+import Size from '../views/SizeChart.vue'
+import Contact from '../views/Contact.vue'
+import Prod from '../views/ProductDetail.vue'
 Vue.use(VueRouter)
 
 const routes = [
+   {
+    path: '/',
+    name: 'Home',
+    component: Start
+  },
   {
     path: '/start',
     name: 'Home',
@@ -39,6 +47,24 @@ const routes = [
     path: '/howtoorder',
     name: 'HowToOrder',
     component: How
+  },
+  {
+    path: '/sizechart',
+    name: 'SizeChart',
+    component: Size
+  }
+  ,
+  {
+    path: '/contactus',
+    name: 'Contact',
+    component: Contact
+  }
+
+  ,
+  {
+    path: '/product-details',
+    name: 'Prod',
+    component: Prod
   }
 ]
 

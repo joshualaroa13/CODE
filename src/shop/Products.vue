@@ -2,64 +2,75 @@
 <div class="container">
     <div class="row">
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product5.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product5-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product5-1.png"></router-link>
             <h1>Chrome-C Tee</h1>
             <h2>P 550</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product4-1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product4.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product4.png"></router-link>
             <h1>Log Out Tee</h1>
             <h2>P 500</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product3.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png"></router-link>
             <h1>Embroidered Butterfly</h1>
             <h2>P 500</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product6.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product6-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product6-1.png"></router-link>
             <h1>Statement Hoodie</h1>
             <h2>P 1000</h2>
         </div>  
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product4.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product4-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product4-1.png"></router-link>
             <h1>Embroidered Butterfly</h1>
             <h2>P 500</h2>
         </div> 
     </div>
     <div class="row">
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product3.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png"></router-link>
             <h1>Chrome-C Tee</h1>
             <h2>P 550</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product4-1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product4.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product4.png"></router-link>
             <h1>Log Out Tee</h1>
             <h2>P 500</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product1-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product1-1.png"></router-link>
             <h1>Embroidered Butterfly</h1>
             <h2>P 500</h2>
         </div>
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product2.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product2-1.png">
+            <img class="column-hover" src="../assets/products/product-shirt/product2-1.png"></router-link>
             <h1>Statement Hoodie</h1>
             <h2>P 1000</h2>
         </div>  
         <div class="column">
+            <router-link to="product-details" class="nav-link">
             <img src="../assets/products/product-shirt/product3.png">
             <img class="column-hover" src="../assets/products/product-shirt/product3-1.png">
+            </router-link>
             <h1>Embroidered Butterfly</h1>
             <h2>P 500</h2>
         </div> 
