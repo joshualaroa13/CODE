@@ -61,7 +61,7 @@ export default {
         background-color: rgb(230, 230, 230);
         padding-bottom: 30px;
         padding-top: 40px;
-        margin-top: 520px;
+        margin-top: 580px;
     }
     .nav-item{
         margin-left: 30px;

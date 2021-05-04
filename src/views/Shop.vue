@@ -1,5 +1,6 @@
 <template>
 <div class="shop">
+  
     <img src="../assets/headers/shopHead.png">
     
     <div class="all-products"><AllProducts /></div>

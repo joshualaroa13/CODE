@@ -1,5 +1,6 @@
 <template>
     <div class="howto">
+        
         <img src="../assets/texts/Contact.png">
         
         <p>

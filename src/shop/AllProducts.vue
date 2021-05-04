@@ -1,96 +1,114 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product2.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product2-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Chrome-C Tee</h1>
-            <h2>P 550</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product4-1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product4.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Log Out Tee</h1>
-            <h2>P 500</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product5.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product5-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Embroidered Butterfly</h1>
-            <h2>P 500</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product6.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product6-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Statement Hoodie</h1>
-            <h2>P 1000</h2>
-        </div>  
-        <div class="column">
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
+        </div>
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product3.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Embroidered Butterfly</h1>
-            <h2>P 500</h2>
-        </div> 
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
+        </div>
     </div>
-    <div class="row">
-        <div class="column">
+     <div class="row">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product1-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Chrome-C Tee</h1>
-            <h2>P 550</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product4-1.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product4.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Log Out Tee</h1>
-            <h2>P 500</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product5.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product5-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Embroidered Butterfly</h1>
-            <h2>P 500</h2>
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
         </div>
-        <div class="column">
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product2.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product2-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Statement Hoodie</h1>
-            <h2>P 1000</h2>
-        </div>  
-        <div class="column">
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
+        </div>
+        <div v-for="product in products" :key="product.id" class="column">
             <router-link to="product-details" class="nav-link">
-            <img src="../assets/products/product-shirt/product3.png">
-            <img class="column-hover" src="../assets/products/product-shirt/product3-1.png">
+            <img :src="product.image">
+            <img class="column-hover" :src="product.imageHover">
             </router-link>
-            <h1>Embroidered Butterfly</h1>
-            <h2>P 500</h2>
-        </div> 
+            <h1>{{ product.name }}</h1>
+            <h2>P {{ product.price }}</h2>
+        </div>
     </div>
 </div>
     
 </template>
 
 <script>
-export default {
-    
+import image from "../assets/products/product-shirt/product5.png"
+import imageHover from "../assets/products/product-shirt/product5-1.png"
+export default {   
+    name: "AllProducts",
+    data: () => {
+        return{
+            products: [
+                {
+                    id: 1,
+                    name: "Smiley Tee",
+                    price: 500 ,
+                    image: image,
+                    imageHover: imageHover
+                }
+            ],
+            showCart: false
+        }
+
+    }
+
 }
 </script>
 

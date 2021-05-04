@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-         
+        
     <div class="row">
         <div class="column">
             <img src="../assets/products/product-shirt/product5.png">

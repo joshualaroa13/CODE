@@ -1,5 +1,7 @@
 <template>
+
     <div class="howto">
+
         <div class="top">
             <p>What is</p>
         <img src="../assets/texts/About.png">
