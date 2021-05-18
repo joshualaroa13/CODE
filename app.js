@@ -58,5 +58,8 @@ app.get('/admin/products',(req,res)=>{
 app.get('/adminLogin',(req,res)=>{
     res.render('Login');
 });
+app.get('/checkout',(req,res)=>{
+    res.render('Checkout');
+});
 
 app.listen(3000);
