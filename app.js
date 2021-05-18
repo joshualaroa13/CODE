@@ -61,5 +61,14 @@ app.get('/adminLogin',(req,res)=>{
 app.get('/checkout',(req,res)=>{
     res.render('Checkout');
 });
+app.get('/profile',(req,res)=>{
+    res.render('Profile');
+});
+app.get('/edit-profile',(req,res)=>{
+    res.render('EditProfile');
+});
+app.get('/checkout-confirm',(req,res)=>{
+    res.render('AfterCheckout');
+});
 
 app.listen(3000);

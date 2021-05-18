@@ -1,14 +1,84 @@
-
-    <div class=cart style="margin-top: 10pc;">
-
-        <center><p>You have no Items in the cart</p></center>
-
-        <div class="button"><a href="checkout"><center><button type="button" class="btn btn-dark">Checkout</button></a></div>
+<img class="coverimg" src="/headers/cartHead.png">
+    <div class="checkout-page">
+        <div class="cart">
+            <h4>Your Cart</h4>
+            <table>
+                <tr>
+                  <th></th>
+                  <th>T-Shirt</th>
+                  <th>Size</th>
+                  <th>Pieces</th>
+                  <th>Price</th>
+                </tr>
+                <tr>
+                  <td><center><img src="/products/product-shirt/product3.png"></center></td>
+                  <td>Blue T-Shirt</td>
+                  <td>M</td>
+                  <td>3</td>
+                  <td>1500</td>
+                </tr>
+                <tr>
+                    <td><center><img src="/products/product-shirt/product1.png"></center></td>
+                    <td>Chrome T-Shirt</td>
+                    <td>M</td>
+                    <td>1</td>
+                    <td>500</td>
+                  </tr>
+            </table>
+            <br>
+            <h5>Total: 2000</h5>
+        </div>
+        <br><br>
+       
+            <div class="confirm-button">
+                <a href="checkout">
+                    <button type="button" class="btn btn-dark">Proceed Checkout</button>
+                </a>
+            </div>
     </div>
-
-
-</script>
 
 <style scoped>
 
+    .checkout-page{
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        
+        width: 60%;
+        padding: 10px;
+    }
+    h5{
+        float:right;
+    }
+    table{
+        text-align: right;
+        margin-top: 30px;
+    }
+
+    th{
+        width: 200px;
+    }
+  
+    h1{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    img{
+        width: 80px;
+        height: auto;
+    }
+
+    .confirm-button button{
+        margin-top: 30px;
+        float: right;
+    }
+
+    .coverimg{
+          padding-bottom: 25px;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 68%;
+    }
 </style>
