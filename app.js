@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/',(req,res)=>{
-    res.render('StartPage');
+    res.render('Login');
 });
 app.get('/home',(req,res)=>{
     res.render('StartPage');
@@ -44,16 +44,19 @@ app.get('/product-details',(req,res)=>{
     res.render('ProductDetail');
 });
 app.get('/admin',(req,res)=>{
-    res.render('Admin');
+    res.render('Adminlogin');
 });
 app.get('/admin/home',(req,res)=>{
-    res.render('AdminHome');
+    res.render('Admin');
 });
 app.get('/admin/orders',(req,res)=>{
     res.render('Orders');
 });
 app.get('/admin/products',(req,res)=>{
     res.render('AdminProducts');
+});
+app.get('/admin/images',(req,res)=>{
+    res.render('Adminimages');
 });
 app.get('/adminLogin',(req,res)=>{
     res.render('Login');
