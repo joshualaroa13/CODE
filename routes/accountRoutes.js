@@ -45,4 +45,7 @@ router.get("/admin/products", accountController.adminProducts_get);
 router.post("/register", accountController.register_post);
 router.post("/login", accountController.login_post);
 
+
+router.post("/addProduct", accountController.addProduct_post);
+
 module.exports = router;

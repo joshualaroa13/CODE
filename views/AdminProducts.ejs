@@ -3,7 +3,7 @@
     <div class="sidebar">
         <center><img  src="/logo.png"></center>
         <br>    
-        <center><a href="/admin" >Overview</a><br>
+        <center><a href="/admin/home" >Overview</a><br>
         <a href="/admin/products">Products</a><br>
         <a href="/admin/images" >Images</a><br>
         <a href="/admin/orders" >Orders</a><br>
@@ -27,6 +27,20 @@
               <th>2XL</th>
               <th></th>
             </tr>
+
+
+            <% for(i=0;i<products.length; i++) {%>
+            <tr>
+              <th>i</th>
+              <td><%= products[i].productName %></td>
+              <td><%= products[i].xs %></td>
+              <td><%= products[i].s %></td>
+              <td><%= products[i].m %></td>
+              <td><%= products[i].l %></td>
+              <td><%= products[i].xl %></td>
+              <td><%= products[i].xl_2 %></td>
+            </tr>
+            <% } %>
             <tr>
                 <th>1</th>
               <td>Chrome Tee</td>
@@ -52,46 +66,41 @@
           </table>
           <br>
           <br>
-          <form>
-            <div class="form-group">
-                <label>Product ID</label>
-                <input class="form-control">
-            </div>
+          <form action="/addProduct" method="POST"> 
             <div class="form-group">
                 <label>Product Name</label>
-                <input class="form-control">
+                <input class="form-control" name="productName">
             </div>
             <h5>Sizes</h5>
             <div class="form-sizes">
                 <label>XS</label>
-                <input class="form-control">
+                <input class="form-control" name="xs">
             </div>
             <div class="form-sizes">
                 <label>S</label>
-                <input class="form-control">
+                <input class="form-control" name="s">
             </div>
             <div class="form-sizes">
                 <label>M</label>
-                <input class="form-control">
+                <input class="form-control" name="m">
             </div>
             <div class="form-sizes">
                 <label>L</label>
-                <input class="form-control">
+                <input class="form-control" name="l">
             </div>
             <div class="form-sizes">
                 <label>XL</label>
-                <input class="form-control">
+                <input class="form-control" name="xl">
             </div>
             <div class="form-sizes">
                 <label>2XL</label>
-                <input class="form-control">
+                <input class="form-control" name="xl_2">
             </div>
             <br><br><br><br>    
-            <h5>Image</h5>
-            <input type="file" style="width:500px">
+            <button type="submit">Add Product</button>
           </form>
           <br>
-          <button>Add Product</button>
+          
     </div>
  
 </div>

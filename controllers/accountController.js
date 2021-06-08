@@ -1,4 +1,5 @@
 //models 
+const product = require("../models/product");
 const account = require("../models/account");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -99,15 +100,22 @@ exports.admin_get = (req, res)=>{
     res.render('admin');
 }
 
-exports.adminHome_get = (req, res)=>{
-    res.render('AdminHome');
+exports.adminHome_get = async (req, res)=>{
+
+    let data = await product.model.findAll();
+
+    // res.locals.products = data;
+    res.render('AdminHome', {products: data});
 }
 
 exports.adminOrders_get = (req, res)=>{
     res.render('Orders');
 }
 
-exports.adminProducts_get = (req, res)=>{
+exports.adminProducts_get = async (req, res)=>{
+    let data = await product.findAll;
+
+    res.locals.products = data;
     res.render('AdminProducts');
 }
 //end of admin get routes
@@ -159,6 +167,17 @@ exports.register_post = async (req, res) => {
 
     }
 
+}
+
+exports.addProduct_post = async(req, res)=>{
+
+    req.body.code = generateCode();
+    let data = await product.model.create(
+        req.body
+    )
+
+    console.log(data);
+    res.redirect('/admin/home');
 }
 
 
