@@ -1,33 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>This is the Login page</h1>
+    here are the links to the pages
 
-    <form>
-      <p class="h4 text-center mb-4">Sign in</p>
-      <label for="defaultFormLoginEmailEx" class="grey-text">Your email</label>
-      <input id="defaultFormLoginEmailEx" class="form-control"/>
-      <br/>
-      <label for="defaultFormLoginPasswordEx" class="grey-text">Your password</label>
-      <input type="password" id="defaultFormLoginPasswordEx" class="form-control"/>
-      <div class="text-center mt-4">
+
+    <form action="/login" method="POST">
+        <input type="email" class="email" name="email" placeholder="email"required>
+        <input type="password" name="password" id="password" placeholder="password" required>
         <button type="submit">Login</button>
-      </div>
-    </form>
     
-  <script>
-  </script>
-  
-  <style>
-      form{
-          padding-top: 50px;
-          margin: 0 auto; 
-          width:250px;
-      }
-      button{
-          background-color: black;
-          color: white;
-          border-radius: 8px;
-          padding-right: 20px;
-          padding-left: 20px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          border: none;
-      }
-  </style>
+    </form>
+
+</body>
+</html>
