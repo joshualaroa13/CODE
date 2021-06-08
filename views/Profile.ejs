@@ -1,13 +1,13 @@
 <div class="profile">
 
     <div class="profile-details">
-        <h1>John Doe</h1>
-        <h7>johndoe69420@email.com</h7><br>
-        <h7>09XX-XXX-XXXX</h7><br><br>
-        <h9>Default Address</h9><br>
-        <h7>69 Street Name, Barangay Kamunggay, Vigan</h7>
-        <a href="edit-profile">
-            <div class="button"><button type="button" class="btn btn-dark">Edit Profile</button></div>
+        <h1><%= users[0].name %></h1>
+        <h7><%= users[0].email %></h7><br>
+        <h7><%= users[0].Number %></h7><br><br>
+        <h9>My Address</h9><br>
+        <h7><%= users[0].address %></h7>
+        <a href="logout">
+            <div class="button"><button type="button" class="btn btn-danger">Log Out</button></div>
         </a>
     </div>
     <div class="order-history">

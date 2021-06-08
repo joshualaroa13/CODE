@@ -1,9 +1,7 @@
-<img class="coverimg" src="/headers/checkoutHead.png">
+<img class="coverimg" src="/headers/cartHead.png">
     <div class="checkout-page">
-
-        
         <div class="cart">
-            <h6>Your Cart</h6>
+            <h4>THIS IS THE ADMIN PAGE</h4>
             <table>
                 <tr>
                   <th></th>
@@ -30,22 +28,13 @@
             <br>
             <h5>Total: 2000</h5>
         </div>
-        <br><br><br>
-        <div class="contact">
-            <p>Delivery Information<br><br><%= users[0].name %><br>
-                <%= users[0].email %><br>
-                <%= users[0].Number %><br>
-                <%= users[0].address %>
-            </p>
-            <a href="edit-profile">Edit Information</a><br>
+        <br><br>
+       
             <div class="confirm-button">
-                <a href="checkout-confirm">
-                    <button type="button" class="btn btn-dark">Checkout</button>
+                <a href="checkout">
+                    <button type="button" class="btn btn-dark">Proceed Checkout</button>
                 </a>
             </div>
-            
-        </div>
-        
     </div>
 
 <style scoped>
@@ -82,7 +71,7 @@
 
     .confirm-button button{
         margin-top: 30px;
-        float: left;
+        float: right;
     }
 
     .coverimg{
