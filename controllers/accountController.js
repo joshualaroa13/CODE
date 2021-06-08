@@ -110,6 +110,7 @@ exports.adminOrders_get = (req, res)=>{
 exports.adminProducts_get = (req, res)=>{
     res.render('AdminProducts');
 }
+//end of admin get routes
 
 exports.login_get = (req, res)=>{
     res.render('Login');
