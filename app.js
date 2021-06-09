@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
     res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
     next();
 });
-
+/*
 app.get('/',(req,res)=>{
     res.render('Login');
 });
@@ -78,7 +78,7 @@ app.get('/edit-profile',(req,res)=>{
 app.get('/checkout-confirm',(req,res)=>{
     res.render('AfterCheckout');
 });
-
+*/
 
 app.use(accountRoutes);
 app.listen(3000);

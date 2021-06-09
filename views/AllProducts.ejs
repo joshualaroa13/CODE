@@ -1,89 +1,21 @@
-<%- include('Navbar'); %>
+
     <div class="container6">
         <div class="row">
-            <div  class="column">
+            <% var i;
+            var image1;
+            var image2;
+             for(i=0;i < product.length;i++){
+                image1 = "/products/product-shirt/product"+ (i+1) +"-1.png";
+                image2 = "/products/product-shirt/product"+ (i+1) +".png"; %>
+            <div class="column">
                 <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
+                <img src="<%= image2%>">
+                <img class="column-hover" src="<%= image1%>"></a>
+                <h1><%= product[i].productName %></h1>
+                <h2>P500</h2>
             </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            
-        </div>
-        <div class="row">
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
-            <div  class="column">
-                <a href="product-details" class="nav-link">
-                <img src="/products/product-shirt/product5.png">
-                <img class="column-hover" src="/products/product-shirt/product5-1.png">
-                </a>
-                <h1>Smiley Tee</h1>
-                <h2>P 500</h2>
-            </div>
+            <%}%>
+           
             
         </div>
     </div>

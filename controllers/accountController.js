@@ -2,27 +2,29 @@
 const product = require("../models/product");
 const account = require("../models/account");
 const bcrypt = require("bcrypt");
+const connection = require("../connection");
+const { QueryTypes, where } = require('sequelize');
+const { query } = require("express");
 const saltRounds = 10;
 const maxAge = 3 * 24 * 60 * 60;
 //end of models
 
 exports.index_get = async (req, res)=>{
+
     const cookie = req.cookies.user;
-    let data = await account.model.findAll({
-        
-        where: {
-            code: cookie
-            
-        }
-        
-    });
-    res.locals.users = data;
-    console.log(data);
-    res.render('StartPage');
+    const query = "Select * from products ";
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+
+    res.render('StartPage',{product:product});
 }
 
-exports.shop_get = (req, res)=>{
-    res.render('Shop');
+exports.shop_get = async (req, res)=>{
+
+    const query = "Select * from products ";
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+
+    res.render('Shop',{product:product});
+ 
 }
 
 exports.howtoOrder_get = (req, res)=>{
@@ -112,11 +114,14 @@ exports.adminOrders_get = (req, res)=>{
     res.render('Orders');
 }
 
-exports.adminProducts_get = async (req, res)=>{
-    let data = await product.findAll;
+exports.adminImages_get = (req, res)=>{
+    res.render('Adminimages');
+}
 
-    res.locals.products = data;
-    res.render('AdminProducts');
+exports.adminProducts_get = async (req, res)=>{
+    const query = "Select * from products ";
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+    res.render('AdminProducts',{products:product});
 }
 //end of admin get routes
 

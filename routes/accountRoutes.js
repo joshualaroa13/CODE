@@ -37,6 +37,7 @@ router.get("/admin", accountController.admin_get);
 router.get("/admin/home", accountController.adminHome_get);
 router.get("/admin/orders", accountController.adminOrders_get);
 router.get("/admin/products", accountController.adminProducts_get);
+router.get("/admin/images", accountController.adminImages_get);
 
 
 

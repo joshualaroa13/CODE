@@ -15,7 +15,7 @@ const product = instance.sequelize.define("products", {
       },
 
       productName: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
       },
 

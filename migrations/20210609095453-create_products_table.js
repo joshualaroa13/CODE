@@ -22,7 +22,7 @@ module.exports = {
       },
 
       productName: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
       },
 
