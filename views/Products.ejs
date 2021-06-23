@@ -4,11 +4,13 @@
             <% var i;
             var image1;
             var image2;
+            var link;
              for(i=0;i < product.length;i++){
                 image1 = "/products/product-shirt/product"+ (i+1) +"-1.png";
-                image2 = "/products/product-shirt/product"+ (i+1) +".png"; %>
+                image2 = "/products/product-shirt/product"+ (i+1) +".png";
+                 link = "product-details/"+ product[i].id%>
             <div class="column">
-                <a href="product-details" class="nav-link">
+                <a href="<%= link%>" class="nav-link">
                 <img src="<%= image2%>">
                 <img class="column-hover" src="<%= image1%>"></a>
                 <h1><%= product[i].productName %></h1>

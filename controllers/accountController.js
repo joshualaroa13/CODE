@@ -47,8 +47,10 @@ exports.cart_get = (req, res)=>{
     res.render('Cart');
 }
 
-exports.productDetail_get = (req, res)=>{
-    res.render('ProductDetail');
+exports.productDetail_get = async (req, res)=>{
+    const query = "Select * from products where id = "+req.param('id');
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+    res.render('ProductDetail',{product:product});
 }
 
 exports.checkout_get = async (req, res)=>{

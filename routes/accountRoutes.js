@@ -19,7 +19,7 @@ router.get("/contactus", accountController.contactUs_get);
 router.get("/aboutus", accountController.about_get);
 
 router.get("/cart", accountController.cart_get);
-router.get("/product-details", accountController.productDetail_get);
+router.get("/product-details/:id", accountController.productDetail_get);
 router.get("/checkout", accountController.checkout_get);
 router.get("/profile", accountController.profile_get);
 router.get("/editprofile", accountController.editProfile_get);
