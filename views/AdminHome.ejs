@@ -4,7 +4,7 @@
         <div class="sidebar">
             <center><img  src="/logo1.png"></center>
             <br>    
-            <center><a href="/admin/home" >Overview</a><br>
+            <center><a href="/admin/homeget" >Overview</a><br>
             <a href="/admin/products">Products</a><br>
             <a href="/admin/images" >Images</a><br>
             <a href="/admin/orders" >Orders</a><br><br><br>
@@ -53,48 +53,22 @@
                   <th>XL</th>
                   <th>2XL</th>
                 </tr>
+                <% var i;
+                 for(i=0;i < products.length;i++){%>
                     <tr>
-                        <td><%= products[0].productName %></td>
-                        <td><%= products[0].xs %></td>
-                        <td><%= products[0].s %></td>
-                        <td><%= products[0].m %></td>
-                        <td><%= products[0].l %></td>
-                        <td><%= products[0].xl %></td>
-                        <td><%= products[0].xl_2 %></td>
+                        <td><%= products[i].productName %></td>
+                        <td><%= products[i].xs %></td>
+                        <td><%= products[i].s %></td>
+                        <td><%= products[i].m %></td>
+                        <td><%= products[i].l %></td>
+                        <td><%= products[i].xl %></td>
+                        <td><%= products[i].xl_2 %></td>
                       </tr>
                 
                 
                 
-                
-                
-
-                <tr>
-                  <td>Chrome Tee</td>
-                  <td>2</td>
-                  <td>5</td>
-                  <td>2</td>
-                  <td>0</td>
-                  <td>3</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                    <td>Chrome Tee</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td>2</td>
-                    <td>0</td>
-                    <td>3</td>
-                    <td>0</td>
-                  </tr>
-                <tr>
-                  <td>Smiley Tee</td>
-                  <td>0</td>
-                  <td>3</td>
-                  <td>0</td>
-                  <td>2</td>
-                  <td>5</td>
-                  <td>2</td>
-                </tr>
+                <% } %>
+              
               </table>
         </div>
      

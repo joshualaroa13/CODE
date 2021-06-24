@@ -113,15 +113,29 @@ exports.logout_get = (req,res) =>{
 
 //admin get routes
 exports.admin_get = (req, res)=>{
-    res.render('admin');
+    res.render('Adminlogin');
 }
 
 exports.adminHome_get = async (req, res)=>{
 
-    let data = await product.model.findAll();
+    if(req.body.user == "admin" && req.body.password == "admin"){
+        
+        res.redirect('/admin/homeget');
+    }else{
+        res.redirect('/admin');
+    }
+    
+}
 
-    // res.locals.products = data;
-    res.render('AdminHome', {products: data});
+exports.adminHome = async (req, res)=>{
+
+  
+        let data = await product.model.findAll();
+
+        // res.locals.products = data;
+        res.render('AdminHome', {products: data});
+    
+    
 }
 
 exports.adminOrders_get = (req, res)=>{

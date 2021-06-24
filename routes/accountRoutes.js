@@ -34,7 +34,8 @@ router.get("/logout", accountController.logout_get);
 
 //admin get routes  -- change the routes to another file in the future. possibly another source code but connected to the same database
 router.get("/admin", accountController.admin_get);
-router.get("/admin/home", accountController.adminHome_get);
+router.post("/admin/home", accountController.adminHome_get);
+router.get("/admin/homeget", accountController.adminHome);
 router.get("/admin/orders", accountController.adminOrders_get);
 router.get("/admin/products", accountController.adminProducts_get);
 router.get("/admin/images", accountController.adminImages_get);
