@@ -48,5 +48,6 @@ router.post("/login", accountController.login_post);
 
 
 router.post("/addProduct", accountController.addProduct_post);
+router.post("/addorder", accountController.addOrder);
 
 module.exports = router;

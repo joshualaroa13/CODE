@@ -20,30 +20,33 @@
             </p>
             
     </div>
+    <form action="/addorder" method="post">
+        <input type="hidden" name="productid" id="productid" value="<%= product[0].id%>">
+   
     <div class="dropdown">
         <p>Sizes</p>
-        <select v-model="sizes">
+        <select v-model="sizes" id="size" name="size">
             <option>XS</option>
-            <option>SMALL</option>
-            <option>MEDIUM</option>
-            <option>LARGE</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
             <option>XL</option>
             <option>XXL</option>
         </select>
         <br>
         <br>
         <p>Quantity</p>
-        <select v-model="sizes">
+        <select v-model="sizes" id="quantity"  name="quantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
         </select>
         <br>
         <br>
-        <button>Add to Cart</button>
+        <input type="submit" value="Add cart">
     </div>
     
-   
+   </form>
     </div>
 
     <%- include('Footer'); %>

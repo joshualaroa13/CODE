@@ -1,12 +1,14 @@
 //models 
 const product = require("../models/product");
 const account = require("../models/account");
+const order = require("../models/order");
 const bcrypt = require("bcrypt");
 const connection = require("../connection");
 const { QueryTypes, where } = require('sequelize');
 const { query } = require("express");
 const saltRounds = 10;
 const maxAge = 3 * 24 * 60 * 60;
+const user =  1;
 //end of models
 
 exports.index_get = async (req, res)=>{
@@ -43,8 +45,12 @@ exports.about_get = (req, res)=>{
     res.render('Aboutus');
 }
 
-exports.cart_get = (req, res)=>{
-    res.render('Cart');
+exports.cart_get = async(req, res)=>{
+
+    const query = "Select * from orders where uid = "+user +" and stat = 0";
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+
+    res.render('Cart',{product:product});
 }
 
 exports.productDetail_get = async (req, res)=>{
@@ -58,13 +64,15 @@ exports.checkout_get = async (req, res)=>{
     let data = await account.model.findAll({
         
         where: {
-            code: cookie
+            id: user
             
         }
         
     });
     res.locals.users = data;
-    res.render('Checkout');
+    const query = "Select * from orders where uid = "+user+" and stat = 0";
+    var product = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+    res.render('Checkout',{product:product});
 }
 
 exports.profile_get = async (req, res)=>{
@@ -72,7 +80,7 @@ exports.profile_get = async (req, res)=>{
     let data = await account.model.findAll({
         
         where: {
-            code: cookie
+            id: user
             
         }
         
@@ -82,10 +90,14 @@ exports.profile_get = async (req, res)=>{
 }
 
 exports.editProfile_get = (req, res)=>{
+
     res.render('EditProfile');
 }
 
-exports.checkoutConfirm_get = (req, res)=>{
+exports.checkoutConfirm_get = async (req, res)=>{
+
+    const query = "Update orders set stat = 1 where uid = "+user;
+    await connection.sequelize.query(query, { type: QueryTypes.UPDATE});
     res.render('AfterCheckout');
 }
 
@@ -143,8 +155,9 @@ exports.login_post = async(req,res) => {
     });
 
     if (bcrypt.compareSync(req.body.password, data.password) && data.password != ""){
-        res.cookie('user', data.code, {httpOnly: true, maxAge: maxAge*1000});
+        res.cookie('user', data.id, {httpOnly: true, maxAge: maxAge*1000});
         console.log(data);
+        
         res.redirect("/");
     }else{
         res.send({code: 400});
@@ -167,7 +180,6 @@ exports.register_post = async (req, res) => {
     let data = await account.model.create(
         req.body
     )
-    
     res.cookie('user', req.body.code, {httpOnly: true, maxAge: maxAge*1000});
     console.log(data);
     res.redirect('/');
@@ -186,6 +198,20 @@ exports.addProduct_post = async(req, res)=>{
     console.log(data);
     res.redirect('/admin/home');
 }
+
+exports.addOrder = async(req, res)=>{
+
+    req.body.uid = user;
+    req.body.total = parseInt( req.body.quantity) * 500;
+    req.body.stat = 0;
+    let data = await order.model.create(
+      req.body
+    )
+
+    console.log(data);
+    res.redirect('/cart');
+}
+
 
 
 

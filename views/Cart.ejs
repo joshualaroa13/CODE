@@ -11,23 +11,25 @@
                   <th>Pieces</th>
                   <th>Price</th>
                 </tr>
+
+                <% var i;
+                var pic;
+                var total = 0;
+                for(i=0;i < product.length;i++){
+                    pic = "/products/product-shirt/product"+ (i+1) +".png";
+                    total += product[i].total;
+                    %>
                 <tr>
-                  <td><center><img src="/products/product-shirt/product3.png"></center></td>
-                  <td>Blue T-Shirt</td>
-                  <td>M</td>
-                  <td>3</td>
-                  <td>1500</td>
+                  <td><center><img src="<%= pic%>"></center></td>
+                  <td><%= product[i].productName%></td>
+                  <td><%= product[i].size%></td>
+                  <td><%= product[i].quantity%></td>
+                  <td><%= product[i].total%></td>
                 </tr>
-                <tr>
-                    <td><center><img src="/products/product-shirt/product1.png"></center></td>
-                    <td>Chrome T-Shirt</td>
-                    <td>M</td>
-                    <td>1</td>
-                    <td>500</td>
-                  </tr>
+               <% } %>
             </table>
             <br>
-            <h5>Total: 2000</h5>
+            <h5>Total <%= total%></h5>
         </div>
         <br><br>
        
