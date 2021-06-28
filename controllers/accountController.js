@@ -219,12 +219,17 @@ exports.register_post = async (req, res) => {
 
 exports.addProduct_post = async(req, res)=>{
 
-    req.body.code = generateCode();
-    let data = await product.model.create(
-        req.body
-    )
+    if(req.body.prodid ==-1){
+        req.body.code = generateCode();
+        let data = await product.model.create(
+            req.body
+        );
+    }else{
+        const query = "Update products set productName='"+req.body.productName+"',xs="+req.body.xs+",s="+req.body.s+",m="+req.body.m+",l="+req.body.l+",xl="+req.body.xl+",xl_2="+req.body.xl_2+" where id="+req.body.prodid;
+        await connection.sequelize.query(query, { type: QueryTypes.UPDATE });
+    }
+   
 
-    console.log(data);
     res.redirect('/admin/products');
 }
 

@@ -50,33 +50,34 @@
           <form action="/addProduct" method="POST"> 
             <div class="form-group">
                 <label>Product Name</label>
-                <input class="form-control" name="productName">
+                <input class="form-control" name="productName" id="productName">
             </div>
             <h5>Sizes</h5>
             <div class="form-sizes">
                 <label>XS</label>
-                <input class="form-control" name="xs">
+                <input class="form-control" name="xs" id="xs">
             </div>
             <div class="form-sizes">
                 <label>S</label>
-                <input class="form-control" name="s">
+                <input class="form-control" name="s" id="s">
             </div>
             <div class="form-sizes">
                 <label>M</label>
-                <input class="form-control" name="m">
+                <input class="form-control" name="m" id="m">
             </div>
             <div class="form-sizes">
                 <label>L</label>
-                <input class="form-control" name="l">
+                <input class="form-control" name="l" id="l">
             </div>
             <div class="form-sizes">
                 <label>XL</label>
-                <input class="form-control" name="xl">
+                <input class="form-control" name="xl" id="xl">
             </div>
             <div class="form-sizes">
                 <label>2XL</label>
-                <input class="form-control" name="xl_2">
+                <input class="form-control" name="xl_2" id="xl_2">
             </div>
+            <input type="hidden" name="prodid" value="-1" id="prodid">
             <br><br><br><br>    
             <button type="submit">Add Product</button>
           </form>
@@ -88,7 +89,24 @@
 
 <script>
   function selectProd(elem){
-    console.log(elem.id);
+    var id = elem.id;
+    var firstchild = elem.parentNode.parentNode.firstElementChild;
+    var prodname = document.getElementById('productName');
+    var xs = document.getElementById('xs');
+    var s = document.getElementById('s');
+    var m = document.getElementById('m');
+    var l = document.getElementById('l');
+    var xl = document.getElementById('xl');
+    var xl_2 = document.getElementById('xl_2');
+    var inputid = document.getElementById('prodid');
+    inputid.value = id;
+    prodname.value = firstchild.nextElementSibling.innerHTML;
+    xs.value = firstchild.nextElementSibling.nextElementSibling.innerHTML;
+    s.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    m.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    l.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    xl.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
+    xl_2.value = firstchild.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML;
   }
 </script>
 <style>
