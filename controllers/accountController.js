@@ -131,15 +131,30 @@ exports.adminHome = async (req, res)=>{
 
   
         let data = await product.model.findAll();
+        const query = "Select * from orders where stat= 1";
+        let orders =  await connection.sequelize.query(query, { type: QueryTypes.SELECT});
+        let stock = 0, totalsales = 0;
+        const query2 = "Select * from orders where stat= 2";
+        let orders2 =  await connection.sequelize.query(query2, { type: QueryTypes.SELECT});
 
+        data.forEach(element => {
+            stock += element.xs + element.s + element.m + element.l + element.xl + element.xl_2;
+        });
+
+        orders2.forEach(element => {
+            totalsales += element.total;
+        });
+     
         // res.locals.products = data;
-        res.render('AdminHome', {products: data});
+        res.render('AdminHome', {products: data, orders:orders.length, stock:stock,totalsales:totalsales});
     
     
 }
 
-exports.adminOrders_get = (req, res)=>{
-    res.render('Orders');
+exports.adminOrders_get = async (req, res)=>{
+    const query = "Select orders.id,accounts.name,accounts.email, products.productName,orders.size, orders.total, orders.quantity from orders inner join accounts on orders.uid = accounts.id inner join products on orders.productid = products.id where stat =1 order by stat ASC";
+    var orders = await connection.sequelize.query(query, { type: QueryTypes.SELECT });
+    res.render('Orders',{orders:orders});
 }
 
 exports.adminImages_get = (req, res)=>{
@@ -210,7 +225,7 @@ exports.addProduct_post = async(req, res)=>{
     )
 
     console.log(data);
-    res.redirect('/admin/home');
+    res.redirect('/admin/products');
 }
 
 exports.addOrder = async(req, res)=>{
@@ -224,6 +239,22 @@ exports.addOrder = async(req, res)=>{
 
     console.log(data);
     res.redirect('/cart');
+}
+
+exports.deleteProduct = async(req, res)=>{
+
+    const query = "Delete from products where id="+req.param('id');
+    await connection.sequelize.query(query, { type: QueryTypes.DELETE });
+    res.redirect('/admin/products');
+   
+}
+
+exports.markasdone= async(req, res)=>{
+
+    const query = "Update orders set stat=2 where id="+req.param('id');
+    await connection.sequelize.query(query, { type: QueryTypes.UPDATE});
+    res.redirect('/admin/orders');
+   
 }
 
 

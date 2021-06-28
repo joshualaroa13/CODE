@@ -50,5 +50,7 @@ router.post("/login", accountController.login_post);
 
 router.post("/addProduct", accountController.addProduct_post);
 router.post("/addorder", accountController.addOrder);
+router.get("/admin/deleteProduct/:id", accountController.deleteProduct);
+router.get("/admin/markasdone/:id", accountController.markasdone);
 
 module.exports = router;

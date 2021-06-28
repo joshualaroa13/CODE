@@ -4,7 +4,7 @@
         <br>    
         <center><a href="/admin/homeget" >Overview</a><br>
         <a href="/admin/products">Products</a><br>
-        <a href="/admin/images" >Images</a><br>
+       <!-- <a href="/admin/images" >Images</a><br> -->
         <a href="/admin/orders" >Orders</a><br>
         <br><br>
         <a href="/admin" >Logout</a><br></center>
@@ -16,10 +16,14 @@
               <th>Order Details</th>
               <th></th>
             </tr>
+            <% var i;
+             for(i=0;i < orders.length; i++) {
+               var link = "/admin/markasdone/"+ orders[i].id%>
             <tr>
-              <td>John Doe<br>john.doe@dotcom<br>09XX-XXX-XXXX<br>Smiley, S, 2pcs<br>Total: 1000</td>
-              <td><button>Mark as done</button></td>
+              <td><%= orders[i].name%><br><%= orders[i].email%><br><%= orders[i].number%><br><%= orders[i].productName%>, <%= orders[i].size%>, <%= orders[i].quantity%>pcs<br>Total: <%= orders[i].total%></td>
+              <td><a href="<%= link%>"><button>Mark as done</button></a></td>
             </tr>
+            <% } %>
           </table>
     </div>
 </div>

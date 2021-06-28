@@ -5,7 +5,7 @@
         <br>    
         <center><a href="/admin/homeget" >Overview</a><br>
         <a href="/admin/products">Products</a><br>
-        <a href="/admin/images" >Images</a><br>
+        <!-- <a href="/admin/images" >Images</a><br>-->
         <a href="/admin/orders" >Orders</a><br>
         <br><br>
         <a href="/admin" >Logout</a><br></center>
@@ -29,9 +29,10 @@
             </tr>
 
 
-            <% for(i=0;i<products.length; i++) {%>
-            <tr>
-              <th>i</th>
+            <% for(i=0;i < products.length; i++) {
+             var link= "/admin/deleteProduct/" + products[i].id; %>
+            <tr >
+              <th><a href="#" id="<%= products[i].id%>" onclick="selectProd(this)"><%= products[i].id%></a></th>
               <td><%= products[i].productName %></td>
               <td><%= products[i].xs %></td>
               <td><%= products[i].s %></td>
@@ -39,6 +40,7 @@
               <td><%= products[i].l %></td>
               <td><%= products[i].xl %></td>
               <td><%= products[i].xl_2 %></td>
+              <td><a href="<%= link%>">Delete</a></td>
             </tr>
             <% } %>
            
@@ -84,6 +86,11 @@
  
 </div>
 
+<script>
+  function selectProd(elem){
+    console.log(elem.id);
+  }
+</script>
 <style>
 .sidebar img{
 margin-top: 20px;
